@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.24;
-
+// import "hardhat/console.sol";
 // Uncomment this line to use console.log
 // import "hardhat/console.sol";
 
@@ -10,6 +10,6 @@ contract MyContract {
     bool c = true;
 
     constructor() {
-        console.log(a);
+        // console.log(a);
     }
 }
