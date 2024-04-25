@@ -1,21 +1,14 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.24;
+pragma solidity ^0.7.6;
 import "hardhat/console.sol";
+import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 
-contract MyContract {
-    enum Foods { Apple, Pizza, Bagel, Banana }
-    Foods public food1 = Foods.Apple;
-    Foods public food2 = Foods.Pizza;
-    Foods public food3 = Foods.Bagel;
-    Foods public food4 = Foods.Banana;
+contract MyToken is ERC20 {
     
-    string public name;
-    string public symbol;
-    uint8 public decimals;
 
-    constructor (string memory _name, string memory _symbol, uint8 _decimals) {
-        name = _name;
-        symbol = _symbol;
-        decimals = _decimals;
+    constructor () ERC20("RoyaleCoin", "Royale") {
+
+        _mint(msg.sender, 100 * 10**ERC20.decimals());
+       
     }
 }

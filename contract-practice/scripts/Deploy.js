@@ -1,11 +1,8 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-    const MyContract = await ethers.getContractFactory("MyContract");
-    const name = "DecToken";
-    const symbol = "DTK";
-    const decimals = 18;
-    const contract = await MyContract.deploy(name, symbol, decimals)
+    const MyToken = await ethers.getContractFactory("MyToken");
+    const contract = await MyToken.deploy()
     // my_contract.getAddress()
     //     .then((address) => {
     //         console.log("Contract deployed to address: ", address);
