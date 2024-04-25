@@ -1,15 +1,17 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.24;
-// import "hardhat/console.sol";
+import "hardhat/console.sol";
 // Uncomment this line to use console.log
 // import "hardhat/console.sol";
 
 contract MyContract {
-    uint256 a = 100;
-    uint256 b = type(uint256).max;
-    bool c = true;
+    uint256 public sum;
 
-    constructor() {
-        // console.log(a);
+
+    constructor(uint256 x, uint256 y) {
+        sum = add(x,y);
+    }
+    function add(uint256 x, uint256 y) private pure  returns (uint256) {
+        return x + y;
     }
 }
